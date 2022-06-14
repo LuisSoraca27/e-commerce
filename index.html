@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce propio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!--  -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <!--  -->
+</head>
+<body>
+    <div class="nav">
+        <div class="logo"><img src="img/logo-academlo.png" alt="logo academlo"></div>
+        <div class="icono-carrito" onclick="mostrarCarrito(carrito)" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"><img src="img/shopping-cart.png"></div>
+    </div>
+    <div class="header-productos">
+        <h3>Todos nuestros productos</h3>
+        <select class="select">
+            <option value="todos">Todos</option>
+            <option value="hoodie">Hoodie</option>
+            <option value="sudadera">Sudadera</option>
+            <option value="camisa">Camisa</option>
+        </select>
+    </div>
+
+    
+    <div class="contenedor-productos">
+        
+    </div>
+
+
+
+    <!-- Modal 1: vista previa -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="https://img.represent.com/uploads/39eecc78c3a4e8bcf0542f9088d0df61.jpeg?w=750&q=95&auto=format" id="foto-producto-añadir">
+                <h2 id="nombre-producto">nombre del producto</h2>
+                <span id="precio-producto">precio del producto</span>
+                <span id="desc-producto">descripción del producto</span>
+                <div class="contenedor-colores">
+                    <span id="titulo-colores">colores</span>
+                    <span class="item" id="color1">negro</span><span class="item" id="color2">rojo</span>
+                </div>
+                <div class="talles">
+                    <span id="titulo-talles">Talles</span>
+                    <span class="item" id="talle-s">S</span>
+                    <span class="item" id="talle-m">M</span>
+                    <span class="item" id="talle-l">L</span>
+                    <span class="item" id="talle-xl">XL</span>
+                    <span class="item" id="talle-xxl">XXL</span>
+                    <span class="item" id="talle-3xl">3XL</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Añadir al carrito</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: carrito -->
+    <div class="modal fade carrito" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Carrito de compras</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="contenedor-carrito">
+                    <!-- <div class="producto-carrito d-flex">
+                        <div id="contenedor-foto-carrito">
+                            <img src="https://img.represent.com/uploads/39eecc78c3a4e8bcf0542f9088d0df61.jpeg?w=750&q=95&auto=format" id="foto-producto-carrito">
+                        </div>
+                        <div id="detalle-producto-carrito">
+                            <h2>nombre del producto</h2>
+                            <span>$14.00</span><br>
+                            <span id="color-elegido">Color: rojo</span>
+                            <span>Talle: S</span>
+                        </div>
+                        <div id="botones-carrito" class="d-flex">
+                            <div id="agregar-restar">
+                                <button id="op">+</button>
+                                <span>1</span>
+                                <button id="op">-</button>
+                            </div>
+                            <div id="contenedor-eliminar">
+                                <button id="boton-eliminar">Eliminar</button>
+                            </div>
+                        </div>
+                    </div> fin producto único -->
+                </div>
+                <div class="resumen-carrito">
+                    <h2>Resumen del pedido</h2>
+                    <div class="d-flex justify-content-between"><span>Subtotal</span><span>$290</span></div>
+                    <div class="d-flex justify-content-between"><span>Envío</span><span>$290</span></div>
+                    <div class="d-flex justify-content-between"><span>Total</span><span>$290</span></div>
+                </div>
+            </div> <!-- fin modal body -->
+            <div class="modal-footer" id="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary btn-finalizar-compra" data-bs-dismiss="modal">Finalizar compra</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">- Ecommerce hecho en Academlo -</div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
